@@ -1,15 +1,15 @@
 default: cedar cedar-14
 
-cedar: dist/cedar/pgsql-9.3.5-1.tar.gz
+cedar: dist/cedar/pgsql-9.4.4.tar.gz
 
-cedar-14: dist/cedar-14/pgsql-9.3.5-1.tar.gz
+cedar-14: dist/cedar-14/pgsql-9.4.4.tar.gz
 
-dist/cedar-14/pgsql-9.3.5-1.tar.gz: cedar-14-stack
+dist/cedar-14/pgsql-9.4.4.tar.gz: cedar-14-stack
 	docker cp $<:/tmp/pgsql-$<.tar.gz .
 	mkdir -p $$(dirname $@)
 	mv pgsql-$<.tar.gz $@
 
-dist/cedar/pgsql-9.3.5-1.tar.gz: cedar-stack
+dist/cedar/pgsql-9.4.4.tar.gz: cedar-stack
 	docker cp $<:/tmp/pgsql-$<.tar.gz .
 	mkdir -p $$(dirname $@)
 	mv pgsql-$<.tar.gz $@
@@ -23,7 +23,7 @@ clean:
 
 src/postgresql.tar.gz:
 	mkdir -p $$(dirname $@)
-	curl -sL http://ftp.postgresql.org/pub/source/v9.3.5/postgresql-9.3.5.tar.gz -o $@
+	curl -sL http://ftp.postgresql.org/pub/source/v9.4.4/postgresql-9.4.4.tar.gz -o $@
 
 .PHONY: cedar-14-stack
 

@@ -35,7 +35,7 @@ function vendor() {
 }
 
 echo "-----> Vendoring binaries"
-vendor "https://s3.amazonaws.com/mojodna-heroku/$STACK/pgsql-9.3.5-1.tar.gz" "$BUILD_DIR/vendor/pgsql"
+vendor "https://raw.githubusercontent.com/george-semenov/heroku-buildpack-pgsql/master/dist/cedar/pgsql-9.4.4.tar.gz" "$BUILD_DIR/vendor/pgsql"
 
 echo "-----> Configuring build environment"
 
